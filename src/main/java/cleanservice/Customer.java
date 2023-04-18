@@ -7,19 +7,19 @@ import io.cucumber.java.it.Date;
 public class Customer {
     private String firstName;
     private String lastName;
-    private String email;
-    private String password;
+    private String Customer_id;
     private String phone;
     private String address;
-    private Date deliveryDate;
-    private List<Product> products;
+ 
+    
 
     public Customer(String firstName, String lastName, String email, String phone, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.Customer_id = email;
         this.phone = phone;
         this.address = address;
+        
     }
 
     public String getFirstName() {
@@ -38,12 +38,12 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return this.email;
+    public String getCustomer_id() {
+        return this.Customer_id;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCustomer_id(String email) {
+        this.Customer_id = email;
     }
 
     public String getPhone() {
@@ -61,29 +61,12 @@ public class Customer {
     public void setAddress(String address) {
         this.address = address;
     }
-    public void setDeliveryDate(Date deliveryDate) {
-        this.deliveryDate = deliveryDate;
-    }
-    public Date getDeliveryDate() {
-        return this.deliveryDate;
-    }
-    public List<Product> getProducts() {
-        return this.products;
-    }
 
-    public void addProduct(Product product) {
-        this.products.add(product);
-    }
+	public boolean login(String string, String string2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-    public void removeProduct(Product product) {
-        this.products.remove(product);
-    }
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 	
+    
 }

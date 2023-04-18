@@ -5,7 +5,7 @@ public class Product {
     private String picture; 
     private String description;
     private boolean specialTreatmentRequired;
-    private double price;
+  
 
     public Product(String name, String picture, String description, boolean specialTreatmentRequired) {
         this.name = name;
@@ -46,11 +46,7 @@ public class Product {
     public void setSpecialTreatmentRequired(boolean specialTreatmentRequired) {
         this.specialTreatmentRequired = specialTreatmentRequired;
     }
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
-    public double getPrice() {
-        return this.price;
-    }
+
+	
 }

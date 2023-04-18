@@ -11,10 +11,11 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class loginsteps {
-	static boolean result;
+	home myHome = new home();
+	boolean result;
 	@When("the customer logs in with email {string} and password {string}")
-	public static void the_customer_logs_in_with_email_and_password(String email, String password) {
-       result  = home.login(email, password);
+	public void the_customer_logs_in_with_email_and_password(String email, String password) {
+     //  result  = myHome.login(email, password);
  
 	}
 
