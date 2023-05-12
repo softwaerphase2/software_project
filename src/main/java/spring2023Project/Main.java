@@ -1,8 +1,7 @@
 package spring2023Project;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-//import java.io.*;
-// edit to string function in customer and product
+
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -34,8 +33,7 @@ public class Main {
 		WorkerList.add(worker4);
 		WorkerList.add(worker5);
 		Scanner scanner = new Scanner(System.in);
-		String adminName = "admin";
-		String adminPassword = "admin1234";
+		admin myadmin=new admin();
 		boolean loggedIn = false;
 
 		System.out.println("Admin dashboard");
@@ -52,7 +50,7 @@ public class Main {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			if (username.equals(adminName) && password.equals(adminPassword)) {
+			if (username.equals(myadmin.getAdminName()) && password.equals(myadmin.getAdminPassword())) {
 				System.out.println("Login successful!");
 				loggedIn = true;
 				menu();
@@ -68,7 +66,7 @@ public class Main {
 	
 
 	public static void menu() {
-		// TODO Auto-generated method stub
+
 		String[] argss = {};
 		Scanner scanner = new Scanner(System.in);
 		int choice = 0;
@@ -76,7 +74,7 @@ public class Main {
 			System.out.println("------------------\"<My Main>\"-----------------------");
 			System.out.println("Customer product  Data -->[1]");
 			System.out.println("Ditribute Order -->[2]");
-			System.out.println("Sent Email For Complete Product--> [3]");// comment in woeker class
+			System.out.println("Sent Email For Complete Product--> [3]");
 			System.out.println("Financial Statistics -->[4]");
 			System.out.println("Print Invoice -->[5]");
 			System.out.println("Log out  -->[6]");
@@ -108,10 +106,11 @@ public class Main {
 
 				case 4 :
 					financialStatistics();
+					break;
 
 				case 5 :
 					printInvoice();
-
+					break;
 
 			}
 
@@ -375,10 +374,9 @@ public class Main {
 	
 	@EventListener(ApplicationReadyEvent.class)
 	public void sendMail() {
-		
-		//senderService.sendEmail("Yzeed.alshami111@gmail.com", "Order is complete", "Hello sir, this message is from Najah Clean Service. Your order is complete.");
+
+
 		senderService.sendEmail(Email, "Order is complete", "Hello sir, this message is from Najah Clean Service. Your order is complete.");
-		//senderService.sendEmail("mohamadmistro2001@gmail.com", "order is complete", "Hello sir this message from Najah Clean Service...your order is complete");
 	}
 
 }

@@ -12,21 +12,7 @@ public class Customer {
     private String HasOrder;
     private boolean existence;
     public  ArrayList<Product> productList = new ArrayList<Product>();
-   /* public Customer(String firstName, String lastName, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-    }*/
 
-    /*public boolean login(String enteredEmail, String enteredPassword) {
-        if (enteredEmail.equals(email) && enteredPassword.equals(password)) {
-            return true;
-        }
-        return false;
-    }*/
-
-    // getters and setters
     public String getFirstName() {
         return firstName;
     }

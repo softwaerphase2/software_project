@@ -7,14 +7,7 @@ public class Worker {
 	private String Address;
 	private String Availability;
 	private int Salary;
-	/*
 
-	menu :
-	print all product is vlaue =1
-	select one product
-	change ex to zero
-	send to product onwer
-	 */
 
 	 Worker(String name, String phone_Number, String address, String availability, int salary) {
 		this.Name = name;
