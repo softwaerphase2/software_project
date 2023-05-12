@@ -2,33 +2,35 @@ package spring2023Project;
 
 public class CleanApp {
 
-	private String UserType;
-	private Product AddedProduct;
+	private String userType;
+	private Product addedProduct;
 	private Customer addedCustomer;
 	private int total;
 	private int cost;
 	private int payrolls;
+
+
 	private boolean reprtGenerated;
-	private boolean InvoiceGenerated;
+	private boolean invoiceGenerated;
 	
 	public void setAppUserType(String S) {
 		
-		UserType = S;
+		userType = S;
 		
 	}
 	
 	public String getAppUserType() {
 		
-		return UserType;
+		return userType;
 		
 	}
 
 	public Product getAddedProduct() {
-		return AddedProduct;
+		return addedProduct;
 	}
 
 	public void setAddedProduct(Product addedProduct) {
-		AddedProduct = addedProduct;
+		addedProduct = addedProduct;
 	}
 
 	public int getTotal() {
@@ -72,11 +74,11 @@ public class CleanApp {
 	}
 
 	public boolean isInvoiceGenerated() {
-		return InvoiceGenerated;
+		return invoiceGenerated;
 	}
 
 	public void setInvoiceGenerated(boolean invoiceGenerated) {
-		InvoiceGenerated = invoiceGenerated;
+		invoiceGenerated = invoiceGenerated;
 	}
 	
 	

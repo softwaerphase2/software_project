@@ -14,14 +14,13 @@ public class Main {
 	@Autowired
 	private EmailSenderService senderService;
 	
-	static String Email = new String();
+	static String Email = "";
 	public static ArrayList<Customer> customerList = new ArrayList<Customer>();
 	public static ArrayList<Product> ProductList = new ArrayList<Product>();
 	public static ArrayList<Worker> WorkerList = new ArrayList<Worker>();
 	public static int counter=0;
 	public static void main(String[] args) {
-		// add static data for customer and product to let worker saw them
-		//SpringApplication.run(Main.class,args);
+
 		Worker worker1=new Worker("ahmad","0592458756","Hebron","yes",200);
 		Worker worker2=new Worker("mohammad","0592316246","Amman","yes",150);
 		Worker worker3=new Worker("khaled","0593248715","Jenen","no",400);
@@ -50,7 +49,7 @@ public class Main {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			if (username.equals(myadmin.getAdminName()) && password.equals(myadmin.getAdminPassword())) {
+			if (username.equals(myadmin.getAdminName()) && password.equals(myadmin.getAdminPword())) {
 				System.out.println("Login successful!");
 				loggedIn = true;
 				menu();
@@ -83,10 +82,10 @@ public class Main {
 			choice=scanner.nextInt();
 			System.out.println("\n\n");
 			switch (choice){
-				case 1 : //CRUD menu!
+				case 1 :
 					CRUD_menu();
 					break;
-				case 2 ://Ditribute Order
+				case 2 :
 					ditributeOrder();
 					break;
 
@@ -98,7 +97,7 @@ public class Main {
 					try {
 						TimeUnit.SECONDS.sleep(1);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
+
 						e.printStackTrace();
 					}
 					SpringApplication.run(Main.class, argss);

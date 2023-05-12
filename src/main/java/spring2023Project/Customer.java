@@ -3,13 +3,16 @@ package spring2023Project;
 import java.util.ArrayList;
 
 public class Customer {
-    private  String ID;
+    private  String iD;
     private String firstName;
     private String lastName;
+
     private String email;
     private String password;
-    private String CustomerType ;
-    private String HasOrder;
+    private String customerType ;
+    private String hasOrder;
+
+
     private boolean existence;
     public  ArrayList<Product> productList = new ArrayList<Product>();
 
@@ -46,25 +49,25 @@ public class Customer {
     }
     public void setCustomerType (String t) {
     	
-    	CustomerType = t;
+    	customerType = t;
     	
     }
 
     public String getCustomerType () {
     	
-    	return CustomerType;
+    	return customerType;
     	
     }
 
     public void setHasOrder (String b) {
     	
-    	HasOrder = b;
+    	hasOrder = b;
     	
     }
 
     public String getHasOrder () {
     	
-    	return HasOrder;
+    	return hasOrder;
     	
     }
 
@@ -77,10 +80,10 @@ public class Customer {
 	}
 
     public String getID() {
-        return ID;
+        return iD;
     }
 
     public void setID(String ID) {
-        this.ID = ID;
+        this.iD = ID;
     }
 }

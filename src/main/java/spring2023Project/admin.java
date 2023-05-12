@@ -10,14 +10,14 @@ public class admin {
         this.adminName = adminName;
     }
 
-    public String getAdminPassword() {
-        return adminPassword;
+    public String getAdminPword() {
+        return adminPword;
     }
 
-    public void setAdminPassword(String adminPassword) {
-        this.adminPassword = adminPassword;
+    public void setAdminPword(String adminPword) {
+        this.adminPword = adminPword;
     }
 
     private String adminName = "admin";
-    private String adminPassword = "admin1234";
+    private String adminPword = "admin1234";
 }
