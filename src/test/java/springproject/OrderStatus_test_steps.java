@@ -1,4 +1,4 @@
-package springProject;
+package springproject;
 
 import static org.junit.Assert.assertEquals;
 

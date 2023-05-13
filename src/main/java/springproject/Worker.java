@@ -1,4 +1,4 @@
-package springProject;
+package springproject;
 
 public class Worker {
 
