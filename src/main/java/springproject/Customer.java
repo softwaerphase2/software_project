@@ -14,7 +14,7 @@ public class Customer {
 
 
     private boolean existence;
-    public  ArrayList<Product> productList = new ArrayList<Product>();
+    public static final  ArrayList<Product> productList = new ArrayList<Product>();
 
     public String getFirstName() {
         return firstName;

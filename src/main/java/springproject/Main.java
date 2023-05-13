@@ -3,7 +3,8 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import java.util.*;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +15,8 @@ import org.springframework.context.event.EventListener;
 public class Main {
 	@Autowired
 	private EmailSenderService senderService;
-	
+	private static final Logger logger = LoggerFactory.getLogger(Main.class);
+
 	static String email = "";
 	 static ArrayList<Customer> customerList = new ArrayList<Customer>();
 	 static ArrayList<Product> productLiist = new ArrayList<Product>();
@@ -85,7 +87,7 @@ public class Main {
 			System.out.println("\n\n");
 			switch (choice){
 				case 1 :
-					CRUD_menu();
+					CRUDMenu();
 					break;
 				case 2 :
 					ditributeOrder();
@@ -95,11 +97,12 @@ public class Main {
 					System.out.println("Enter customer Email");
 					Scanner s = new Scanner(System.in);
 					email = s.nextLine();
-					
+
 					try {
 						TimeUnit.SECONDS.sleep(1);
 					} catch (InterruptedException e) {
 
+						Thread.currentThread().interrupt();
 						e.printStackTrace();
 					}
 					SpringApplication.run(Main.class, argss);
@@ -198,18 +201,18 @@ public class Main {
 		}
 
 	}
-	public static void CRUD_menu() {
+	public static void CRUDMenu() {
 		while (true) {
-			System.out.println("Welcome to the CRUD menu!");
-			System.out.println("1. Create Customer");
-			System.out.println("2. Delete Customer");
-			System.out.println("3. Update Customer");
-			System.out.println("4. List Customers by Name");
-			System.out.println("5. Create Product");
-			System.out.println("6. Delete Product");
-			System.out.println("7. Update Product");
-			System.out.println("8. show List Products by Name");
-			System.out.println("0. Exit");
+			logger.info("Welcome to the CRUD menu!");
+			logger.info("1. Create Customer");
+			logger.info("2. Delete Customer");
+			logger.info("3. Update Customer");
+			logger.info("4. List Customers by Name");
+			logger.info("5. Create Product");
+			logger.info("6. Delete Product");
+			logger.info("7. Update Product");
+			logger.info("8. Show List Products by Name");
+			logger.info("0. Exit");
 			Scanner scanner = new Scanner(System.in);
 			int choice = scanner.nextInt();
 
