@@ -37,8 +37,8 @@ public class DistributeOrders_test_steps {
 	    
 		Order O = new Order();
 		Worker W = new Worker();
-		O.setWorker_On_Order(W);
-		assertEquals(W,O.getWorker_On_Order());
+		O.setWorkerOnorder(W);
+		assertEquals(W,O.getWorkerOnorder());
 	    //throw new io.cucumber.java.PendingException();
 	}
 
@@ -56,7 +56,7 @@ public class DistributeOrders_test_steps {
 	    
 		Order O = new Order();
 		Worker W = new Worker();
-		assertNotEquals(W,O.getWorker_On_Order());
+		assertNotEquals(W,O.getWorkerOnorder());
 	    //throw new io.cucumber.java.PendingException();
 	}
 	

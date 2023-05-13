@@ -3,16 +3,16 @@ package spring2023Project;
 public class Order {
 
 	private String Status;
-	private int Discount;
-	private boolean IsReady;
-	private String [] Items;
-	private String Address;
-	private int Total_Price;
-	private Worker Worker_On_Order;
+	private int discount;
+	private boolean isReady;
+	private String [] items;
+	private String address;
+	private int totalPrice;
+	private Worker workerOnorder;
 	
 	public void setOrderStatus(String s) {
-		
-		Status = s;
+
+		this.Status = s;
 		
 	}
 	
@@ -24,58 +24,58 @@ public class Order {
 	
 	public void setOrderDiscount(int d) {
 		
-		Discount = d;
+		discount = d;
 		
 	}
 	
 	public int getOrderDiscount() {
 		
-		return Discount;
+		return discount;
 		
 	}
 	
 	public void setIsReady(boolean b) {
 		
-		IsReady = b;
+		isReady = b;
 		
 	}
 	
 	public boolean getIsReady() {
 		
-		return IsReady;
+		return isReady;
 		
 	}
 
 	public String [] getItems() {
-		return Items;
+		return items;
 	}
 
 	public void setItems(String [] items) {
-		Items = items;
+		this.items = items;
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 
-	public int getTotal_Price() {
-		return Total_Price;
+	public int getTotalPrice() {
+		return totalPrice;
 	}
 
-	public void setTotal_Price(int total_Price) {
-		Total_Price = total_Price;
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 
-	public Worker getWorker_On_Order() {
-		return Worker_On_Order;
+	public Worker getWorkerOnorder() {
+		return workerOnorder;
 	}
 
-	public void setWorker_On_Order(Worker worker_On_Order) {
-		Worker_On_Order = worker_On_Order;
+	public void setWorkerOnorder(Worker workerOnorder) {
+		this.workerOnorder = workerOnorder;
 	}
 	
 }

@@ -60,14 +60,14 @@ public class Product {
 
 	}
 	public void setProductName(String n) {
-		name = n;
+		this.name = n;
 	}
 	
 	public String getProductSize() {
 		return size;
 	}
 	public void setProductSize(String s) {
-		size = s;
+		this.size = s;
 	}
 	@Override
 	public String toString()
@@ -78,14 +78,14 @@ public class Product {
 		return material;
 	}
 	public void setProductMaterial(String m) {
-		material = m;
+		this.material = m;
 	}
 	
 	public boolean isExistence() {
 		return existence;
 	}
 	public void setExistence(boolean e) {
-		existence = e;
+		this.existence = e;
 	}
 	
 	

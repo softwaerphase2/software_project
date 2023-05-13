@@ -16,8 +16,8 @@ public class GenerateInvoice_test_steps {
 		int tp = 60;
 		O.setItems(i);
 		O.setAddress(a);
-		O.setTotal_Price(tp);
-		assertTrue(O.getItems().equals(i)&&(O.getAddress().equals(a))&&(O.getTotal_Price() == tp));
+		O.setTotalPrice(tp);
+		assertTrue(O.getItems().equals(i)&&(O.getAddress().equals(a))&&(O.getTotalPrice() == tp));
 	    //throw new io.cucumber.java.PendingException();
 	}
 

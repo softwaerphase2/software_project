@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import java.util.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +20,7 @@ public class Main {
 	public static ArrayList<Product> ProductList = new ArrayList<Product>();
 	public static ArrayList<Worker> WorkerList = new ArrayList<Worker>();
 	public static int counter=0;
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		Worker worker1=new Worker("ahmad","0592458756","Hebron","yes",200);
 		Worker worker2=new Worker("mohammad","0592316246","Amman","yes",150);
@@ -47,7 +48,8 @@ public class Main {
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
-				e.printStackTrace();
+				Thread.currentThread().interrupt();
+				throw e;
 			}
 			if (username.equals(myadmin.getAdminName()) && password.equals(myadmin.getAdminPword())) {
 				System.out.println("Login successful!");
@@ -110,12 +112,13 @@ public class Main {
 				case 5 :
 					printInvoice();
 					break;
-
+				default: System.out.println("Invalid choice. Try again.");
 			}
 
 
 		}
 	}
+
 
 	private static void printInvoice() {
 	}
@@ -131,7 +134,7 @@ public class Main {
 		
 	}
 
-	private static void customer_nothavewoeker()
+	private static void customerNothavewoeker()
 	{
 		String noo="no";
 		for(Customer i:customerList) {
@@ -160,7 +163,7 @@ public class Main {
 			}
 		}
 		System.out.println("This all Customer have product need worker  \n ");
-		customer_nothavewoeker();
+		customerNothavewoeker();
 		System.out.println("slecet the worker for the Customer you need by name of the Customer & the Product \n");
 		System.out.println("Customer name : \n");
 		String customerName=scanner.nextLine();
@@ -173,21 +176,10 @@ public class Main {
 		System.out.print("Select Worker by Write the name : ");
 
 		String find=scanner.nextLine();
-		for(Customer i:customerList)
-		{
-			if(i.getFirstName().equals(customerName))
-			{
-			for (Product j:i.productList)
-			{
-				if(j.getProductName().equals(productName))
-				{
-					j.setThere_worker("yes");
-					j.setWorkerName(find);
+		assignWorkerToProduct(customerName, productName, find);
 
-				}
-			}
-			}
-		}
+
+
 		for(Worker i :WorkerList)
 		{
 			if(i.getName().equals(find))
@@ -200,7 +192,26 @@ public class Main {
 
 
 	}
+	private static void assignWorkerToProduct(String customerName, String productName, String workerName) {
+		for(Customer i:customerList)
+		{
 
+			if(i.getFirstName().equals(customerName))
+			{
+
+				for (Product j:i.productList)
+				{
+
+					if(j.getProductName().equals(productName))
+					{
+						j.setThere_worker("yes");
+						j.setWorkerName(workerName);
+					}
+				}
+			}
+		}
+
+	}
 	public static void CRUD_menu() {
 		while (true) {
 			System.out.println("Welcome to the CRUD menu!");
@@ -359,7 +370,7 @@ public class Main {
 				Product temp=new Product(i,pname,size,material,true,counter);
 				temp.setThere_worker("no");
 				i.productList.add(temp);
-				if(i.getHasOrder()=="no")
+				if(i.getHasOrder().equals("no"))
 				{
 					i.setHasOrder("yes");
 				}

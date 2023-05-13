@@ -26,7 +26,7 @@ public class Worker {
 	}
 	
 	public void setName(String name) {
-		Name = name;
+		this.Name = name;
 	}
 	
 	public String getPhone_Number() {
@@ -34,7 +34,7 @@ public class Worker {
 	}
 	
 	public void setPhone_Number(String phone_Number) {
-		Phone_Number = phone_Number;
+		this.Phone_Number = phone_Number;
 	}
 	
 	public String getAddress() {
@@ -50,7 +50,7 @@ public class Worker {
 	}
 	
 	public void setAvailability(String availability) {
-		Availability = availability;
+		this.Availability = availability;
 	}
 	
 	public int getSalary() {
@@ -58,7 +58,7 @@ public class Worker {
 	}
 	
 	public void setSalary(int salary) {
-		Salary = salary;
+		this.Salary = salary;
 	}
 	@Override
 	public String toString()

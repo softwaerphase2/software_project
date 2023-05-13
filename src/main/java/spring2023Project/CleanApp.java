@@ -6,6 +6,7 @@ public class CleanApp {
 	private Product addedProduct;
 	private Customer addedCustomer;
 	private int total;
+
 	private int cost;
 	private int payrolls;
 
@@ -13,9 +14,9 @@ public class CleanApp {
 	private boolean reprtGenerated;
 	private boolean invoiceGenerated;
 	
-	public void setAppUserType(String S) {
+	public void setAppUserType(String userT) {
 		
-		userType = S;
+		this.userType = userT;
 		
 	}
 	
@@ -30,7 +31,7 @@ public class CleanApp {
 	}
 
 	public void setAddedProduct(Product addedProduct) {
-		addedProduct = addedProduct;
+		this.addedProduct = addedProduct;
 	}
 
 	public int getTotal() {
@@ -38,7 +39,7 @@ public class CleanApp {
 	}
 
 	public void setTotal(int t) {
-		total = t;
+		this.total = t;
 	}
 
 	public int getCost() {
@@ -46,7 +47,7 @@ public class CleanApp {
 	}
 
 	public void setCost(int c) {
-		cost = c;
+		this.cost = c;
 	}
 
 	public int getPayrolls() {
@@ -54,7 +55,7 @@ public class CleanApp {
 	}
 
 	public void setPayrolls(int p) {
-		payrolls = p;
+		this.payrolls = p;
 	}
 
 	public boolean isReprtGenerated() {
@@ -62,7 +63,7 @@ public class CleanApp {
 	}
 
 	public void setReprtGenerated(boolean r) {
-		reprtGenerated = r;
+		this.reprtGenerated = r;
 	}
 
 	public Customer getAddedCustomer() {
@@ -78,7 +79,7 @@ public class CleanApp {
 	}
 
 	public void setInvoiceGenerated(boolean invoiceGenerated) {
-		invoiceGenerated = invoiceGenerated;
+		this.invoiceGenerated = invoiceGenerated;
 	}
 	
 	
