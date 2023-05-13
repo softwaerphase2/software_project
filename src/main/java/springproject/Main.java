@@ -38,15 +38,15 @@ public class Main {
 		Admin myadmin=new Admin();
 		boolean loggedIn = false;
 
-		System.out.println("Admin dashboard");
+		logger.info("Admin dashboard");
 
 		while (!loggedIn) {
-			System.out.print("Enter username: ");
+			logger.info("Enter username: ");
 			String username = scanner.nextLine();
 
-			System.out.print("Enter password: ");
+			logger.info("Enter password: ");
 			String password = scanner.nextLine();
-			System.out.println("Please wait a moment until we confirm the information ...");
+			logger.info("Please wait a moment until we confirm the information ...");
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
@@ -54,12 +54,12 @@ public class Main {
 				throw e;
 			}
 			if (username.equals(myadmin.getAdminName()) && password.equals(myadmin.getAdminPword())) {
-				System.out.println("Login successful!");
+				logger.info("Login successful!");
 				loggedIn = true;
 				menu();
 			} else {
 
-				System.out.println("\n\nInvalid credentials. Please try again.");
+				logger.info("\n\nInvalid credentials. Please try again.");
 			}
 		}
 
@@ -74,17 +74,17 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		int choice = 0;
 		while (choice != 6) {
-			System.out.println("------------------\"<My Main>\"-----------------------");
-			System.out.println("Customer product  Data -->[1]");
-			System.out.println("Ditribute Order -->[2]");
-			System.out.println("Sent Email For Complete Product--> [3]");
-			System.out.println("Financial Statistics -->[4]");
-			System.out.println("Print Invoice -->[5]");
-			System.out.println("Log out  -->[6]");
-			System.out.println("-------------------------------------------------");
-			System.out.println("Enter Your Choice Number :");
+			logger.info("------------------\"<My Main>\"-----------------------");
+			logger.info("Customer product  Data -->[1]");
+			logger.info("Ditribute Order -->[2]");
+			logger.info("Sent Email For Complete Product--> [3]");
+			logger.info("Financial Statistics -->[4]");
+			logger.info("Print Invoice -->[5]");
+			logger.info("Log out  -->[6]");
+			logger.info("-------------------------------------------------");
+			logger.info("Enter Your Choice Number :");
 			choice=scanner.nextInt();
-			System.out.println("\n\n");
+			logger.info("\n\n");
 			switch (choice){
 				case 1 :
 					CRUDMenu();
@@ -94,7 +94,7 @@ public class Main {
 					break;
 
 				case 3 :
-					System.out.println("Enter customer Email");
+					logger.info("Enter customer Email");
 					Scanner s = new Scanner(System.in);
 					email = s.nextLine();
 
@@ -113,7 +113,7 @@ public class Main {
 
 				case 5 :
 					break;
-				default: System.out.println("Invalid choice. Try again.");
+				default: logger.info("Invalid choice. Try again.");
 			}
 
 
@@ -131,9 +131,9 @@ public class Main {
 			{
 				if(j.getThereWorker().equals(noo))
 				{
-					System.out.println("--------------------");
+					logger.info("--------------------");
 					System.out.println("|"+i+" " +j+"|");
-					System.out.println("--------------------");
+					logger.info("--------------------");
 				}
 			}
 
@@ -143,7 +143,7 @@ public class Main {
 	private static void ditributeOrder() {
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("This is all avilable Worker\n ");
+		logger.info("This is all avilable Worker\n ");
 		for(Worker i:WorkerList) {
 
 			if(i.isAvailability().equals("yes"))
@@ -151,18 +151,18 @@ public class Main {
 				System.out.println(i);
 			}
 		}
-		System.out.println("This all Customer have product need worker  \n ");
+		logger.info("This all Customer have product need worker  \n ");
 		customerNothavewoeker();
-		System.out.println("slecet the worker for the Customer you need by name of the Customer & the Product \n");
-		System.out.println("Customer name : \n");
+		logger.info("slecet the worker for the Customer you need by name of the Customer & the Product \n");
+		logger.info("Customer name : \n");
 		String customerName=scanner.nextLine();
-		System.out.println("Product  name : \n");
+		logger.info("Product  name : \n");
 		String productName=scanner.nextLine();
 
 
 
 
-		System.out.print("Select Worker by Write the name : ");
+		logger.info("Select Worker by Write the name : ");
 
 		String find=scanner.nextLine();
 		assignWorkerToProduct(customerName, productName, find);
@@ -244,10 +244,10 @@ public class Main {
 					break;
 
 				case 0:
-					System.out.println("Goodbye!");
+					logger.info("Goodbye!");
 					return;
 				default:
-					System.out.println("Invalid choice. Try again.");
+					logger.info("Invalid choice. Try again.");
 			}
 		}
 		}
@@ -262,7 +262,7 @@ public class Main {
 	private static void deleteCustomer() {
 
 		printAllc();
-		System.out.print("Enter Customer ID : ");
+		logger.info("Enter Customer ID : ");
 		Scanner scanner = new Scanner(System.in);
 		String find=scanner.nextLine();
 
@@ -278,7 +278,7 @@ public class Main {
 
 	private static void deleteProduct() {
 		printAllp();
-		System.out.print("Enter product number : ");
+		logger.info("Enter product number : ");
 		Scanner scanner = new Scanner(System.in);
 		int find=scanner.nextInt();
 		for(Product i: productLiist)
@@ -295,20 +295,20 @@ public class Main {
 
 	public static void createCustomer() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("\n*** Create Customer ***");
-		System.out.print("Enter customer ID : ");
+		logger.info("\n*** Create Customer ***");
+		logger.info("Enter customer ID : ");
 		String id = scanner.nextLine();
-		System.out.print("Enter customer first name: ");
+		logger.info("Enter customer first name: ");
 		String fname = scanner.nextLine();
-		System.out.print("Enter customer last name: ");
+		logger.info("Enter customer last name: ");
 		String lname = scanner.nextLine();
-		System.out.print("Enter customer email: ");
+		logger.info("Enter customer email: ");
 		String email = scanner.nextLine();
 		Customer customer = new Customer();
-		System.out.print("Enter customer type: ");
+		logger.info("Enter customer type: ");
 		String type = scanner.nextLine();
 		customer.setCustomerType(type);
-		System.out.print("Enter true if customer have order or false if not: ");
+		logger.info("Enter true if customer have order or false if not: ");
 
 		String hasorder = scanner.nextLine();
         customer.setFirstName(fname);
@@ -317,12 +317,12 @@ public class Main {
 		customer.setHasOrder(hasorder);
 		customer.setID(id);
 			customerList.add(customer);
-		System.out.println("Customer created: " +customer.getID() +" "+customer.getFirstName()+" "+customer.getLastName()+" "+customer.getEmail()+" "+customer.getHasOrder());
+		logger.info("Customer created: " +customer.getID() +" "+customer.getFirstName()+" "+customer.getLastName()+" "+customer.getEmail()+" "+customer.getHasOrder());
 	}
 	public static void printAllc()
 	{
 		for(Customer i:customerList) {
-			System.out.println(i.getID()+" "+i.getFirstName()+" "+i.getLastName());
+			logger.info(i.getID()+" "+i.getFirstName()+" "+i.getLastName());
 		}
 
 	}
@@ -341,15 +341,15 @@ public class Main {
 	public static void createProduct()
 	{
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("\n*** Create product ***");
-		System.out.print("Enter product name : ");
+		logger.info("\n*** Create product ***");
+		logger.info("Enter product name : ");
 		String pname = scanner.nextLine();
-		System.out.print("Enter product size : ");
+		logger.info("Enter product size : ");
 		String size = scanner.nextLine();
-		System.out.print("Enter product material : ");
+		logger.info("Enter product material : ");
 		String material = scanner.nextLine();
 		printAllc();
-		System.out.print("select customer number  : ");
+		logger.info("select customer number  : ");
 		int customern = scanner.nextInt();
 		for(Customer i:customerList)
 		{
