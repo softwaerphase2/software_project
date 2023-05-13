@@ -1,6 +1,6 @@
-package spring2023Project;
+package springProject;
 
-public class admin {
+public class Admin {
 
     public String getAdminName() {
         return adminName;
@@ -18,6 +18,6 @@ public class admin {
         this.adminPword = adminPword;
     }
 
-    private String adminName = "admin";
+    private String adminName = "Admin";
     private String adminPword = "admin1234";
 }

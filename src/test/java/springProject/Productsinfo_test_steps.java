@@ -1,4 +1,4 @@
-package spring2023Project;
+package springProject;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -15,7 +15,7 @@ public class Productsinfo_test_steps {
 	public void thatTheAdministratorIsLoggedIn() {
 	    
 		CleanApp ca = new CleanApp();
-		String a = "admin";
+		String a = "Admin";
 		ca.setAppUserType(a);
 		assertEquals(a, ca.getAppUserType());
 	    //throw new io.cucumber.java.PendingException();

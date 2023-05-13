@@ -1,4 +1,4 @@
-package spring2023Project;
+package springProject;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -18,8 +18,8 @@ public class DistributeOrders_test_steps {
 		String n = "ali";
 		String p = "0569654321";
 		W.setName(n);
-		W.setPhone_Number(p);
-		assertTrue((W.getName().equals(n))&&(W.getPhone_Number().equals(p)));
+		W.setPhoneNumber(p);
+		assertTrue((W.getName().equals(n))&&(W.getPhoneNumber().equals(p)));
 	    //throw new io.cucumber.java.PendingException();
 	}
 

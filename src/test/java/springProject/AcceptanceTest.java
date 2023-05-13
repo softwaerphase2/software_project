@@ -1,4 +1,4 @@
-package spring2023Project;
+package springProject;
 
 import org.junit.runner. RunWith;
 
@@ -13,7 +13,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 		features = "uses_cases",
 		plugin = { "summary", "html:target/cucumber/wikipedia.html"},
 		monochrome = true,
-		glue = "spring2023Project",
+		glue = "springProject",
 		
 		snippets = CAMELCASE
 		

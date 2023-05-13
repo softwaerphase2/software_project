@@ -1,4 +1,4 @@
-package spring2023Project;
+package springProject;
 
 import static org.junit.Assert.assertTrue;
 

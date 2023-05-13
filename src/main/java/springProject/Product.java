@@ -1,6 +1,4 @@
-package spring2023Project;
-
-import java.util.ArrayList;
+package springProject;
 
 public class Product {
     Customer productOwner;
@@ -18,7 +16,7 @@ public class Product {
 	private String size;
 	private String material;
 	private boolean existence;
-	private String there_worker;
+	private String thereWorker;
 
 	public String getWorkerName() {
 		return workerName;
@@ -30,12 +28,12 @@ public class Product {
 
 	private String workerName;
 
-	public String getThere_worker() {
-		return there_worker;
+	public String getThereWorker() {
+		return thereWorker;
 	}
 
-	public void setThere_worker(String there_worker) {
-		this.there_worker = there_worker;
+	public void setThereWorker(String thereWorker) {
+		this.thereWorker = thereWorker;
 	}
 
 

@@ -1,4 +1,4 @@
-package spring2023Project;
+package springProject;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -15,10 +15,10 @@ public class Main {
 	@Autowired
 	private EmailSenderService senderService;
 	
-	static String Email = "";
-	public static ArrayList<Customer> customerList = new ArrayList<Customer>();
-	public static ArrayList<Product> ProductList = new ArrayList<Product>();
-	public static ArrayList<Worker> WorkerList = new ArrayList<Worker>();
+	static String email = "";
+	 static ArrayList<Customer> customerList = new ArrayList<Customer>();
+	 static ArrayList<Product> productLiist = new ArrayList<Product>();
+	 static ArrayList<Worker> WorkerList = new ArrayList<Worker>();
 	public static int counter=0;
 	public static void main(String[] args) throws InterruptedException {
 
@@ -33,7 +33,7 @@ public class Main {
 		WorkerList.add(worker4);
 		WorkerList.add(worker5);
 		Scanner scanner = new Scanner(System.in);
-		admin myadmin=new admin();
+		Admin myadmin=new Admin();
 		boolean loggedIn = false;
 
 		System.out.println("Admin dashboard");
@@ -94,7 +94,7 @@ public class Main {
 				case 3 :
 					System.out.println("Enter customer Email");
 					Scanner s = new Scanner(System.in);
-					Email = s.nextLine();
+					email = s.nextLine();
 					
 					try {
 						TimeUnit.SECONDS.sleep(1);
@@ -106,11 +106,9 @@ public class Main {
 					break;
 
 				case 4 :
-					financialStatistics();
 					break;
 
 				case 5 :
-					printInvoice();
 					break;
 				default: System.out.println("Invalid choice. Try again.");
 			}
@@ -120,19 +118,7 @@ public class Main {
 	}
 
 
-	private static void printInvoice() {
-	}
 
-	private static void financialStatistics() {
-		
-	}
-
-	private static void sentEmail() {
-		
-		
-		
-		
-	}
 
 	private static void customerNothavewoeker()
 	{
@@ -140,7 +126,7 @@ public class Main {
 		for(Customer i:customerList) {
 			for (Product j:i.productList)
 			{
-				if(j.getThere_worker().equals(noo))
+				if(j.getThereWorker().equals(noo))
 				{
 					System.out.println("--------------------");
 					System.out.println("|"+i+" " +j+"|");
@@ -204,7 +190,7 @@ public class Main {
 
 					if(j.getProductName().equals(productName))
 					{
-						j.setThere_worker("yes");
+						j.setThereWorker("yes");
 						j.setWorkerName(workerName);
 					}
 				}
@@ -239,7 +225,7 @@ public class Main {
 					updateCustomer();
 					break;
 				case 4:
-					print_allc();
+					printAllc();
 					break;
 				case 5:
 					createProduct();
@@ -251,7 +237,7 @@ public class Main {
 					updateProduct();
 					break;
 				case 8:
-					print_allp();
+					printAllp();
 					break;
 
 				case 0:
@@ -272,7 +258,7 @@ public class Main {
 
 	private static void deleteCustomer() {
 
-		print_allc();
+		printAllc();
 		System.out.print("Enter Customer ID : ");
 		Scanner scanner = new Scanner(System.in);
 		String find=scanner.nextLine();
@@ -288,15 +274,15 @@ public class Main {
 	}
 
 	private static void deleteProduct() {
-		print_allp();
+		printAllp();
 		System.out.print("Enter product number : ");
 		Scanner scanner = new Scanner(System.in);
 		int find=scanner.nextInt();
-		for(Product i:ProductList)
+		for(Product i: productLiist)
 		{
 			if(find==i.getNumber())
 			{
-				ProductList.remove(i);
+				productLiist.remove(i);
 				i.productOwner.productList.remove(i);
 			}
 
@@ -308,7 +294,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("\n*** Create Customer ***");
 		System.out.print("Enter customer ID : ");
-		String ID = scanner.nextLine();
+		String id = scanner.nextLine();
 		System.out.print("Enter customer first name: ");
 		String fname = scanner.nextLine();
 		System.out.print("Enter customer last name: ");
@@ -321,23 +307,23 @@ public class Main {
 		customer.setCustomerType(type);
 		System.out.print("Enter true if customer have order or false if not: ");
 
-		String hasorder = scanner.nextLine();;
+		String hasorder = scanner.nextLine();
         customer.setFirstName(fname);
 		customer.setLastName(lname);
 		customer.setEmail(email);
 		customer.setHasOrder(hasorder);
-		customer.setID(ID);
+		customer.setID(id);
 			customerList.add(customer);
 		System.out.println("Customer created: " +customer.getID() +" "+customer.getFirstName()+" "+customer.getLastName()+" "+customer.getEmail()+" "+customer.getHasOrder());
 	}
-	public static void print_allc()
+	public static void printAllc()
 	{
 		for(Customer i:customerList) {
 			System.out.println(i.getID()+" "+i.getFirstName()+" "+i.getLastName());
 		}
 
 	}
-	public static void print_allp()
+	public static void printAllp()
 	{
 		for(Customer i:customerList) {
 			for(Product j:i.productList)
@@ -359,7 +345,7 @@ public class Main {
 		String size = scanner.nextLine();
 		System.out.print("Enter product material : ");
 		String material = scanner.nextLine();
-		print_allc();
+		printAllc();
 		System.out.print("select customer number  : ");
 		int customern = scanner.nextInt();
 		for(Customer i:customerList)
@@ -368,13 +354,13 @@ public class Main {
 			{
 				counter++;
 				Product temp=new Product(i,pname,size,material,true,counter);
-				temp.setThere_worker("no");
+				temp.setThereWorker("no");
 				i.productList.add(temp);
 				if(i.getHasOrder().equals("no"))
 				{
 					i.setHasOrder("yes");
 				}
-				ProductList.add(temp);
+				productLiist.add(temp);
 
 
 			}
@@ -386,7 +372,7 @@ public class Main {
 	public void sendMail() {
 
 
-		senderService.sendEmail(Email, "Order is complete", "Hello sir, this message is from Najah Clean Service. Your order is complete.");
+		senderService.sendEmail(email, "Order is complete", "Hello sir, this message is from Najah Clean Service. Your order is complete.");
 	}
 
 }

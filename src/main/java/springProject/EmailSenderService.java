@@ -1,4 +1,4 @@
-package spring2023Project;
+package springProject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

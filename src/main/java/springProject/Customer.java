@@ -1,4 +1,4 @@
-package spring2023Project;
+package springProject;
 
 import java.util.ArrayList;
 
@@ -83,7 +83,7 @@ public class Customer {
         return iD;
     }
 
-    public void setID(String ID) {
-        this.iD = ID;
+    public void setID(String id) {
+        this.iD = id;
     }
 }
