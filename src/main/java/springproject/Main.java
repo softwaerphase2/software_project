@@ -20,8 +20,8 @@ public class Main {
 	static String email = "";
 	 static ArrayList<Customer> customerList = new ArrayList<Customer>();
 	 static ArrayList<Product> productLiist = new ArrayList<Product>();
-	 static ArrayList<Worker> WorkerList = new ArrayList<Worker>();
-	public static int counter=0;
+	 static ArrayList<Worker> workerList = new ArrayList<Worker>();
+	public static  int counter=0;
 	public static void main(String[] args) throws InterruptedException {
 
 		Worker worker1=new Worker("ahmad","0592458756","Hebron","yes",200);
@@ -29,11 +29,11 @@ public class Main {
 		Worker worker3=new Worker("khaled","0593248715","Jenen","no",400);
 		Worker worker4=new Worker("zaid","0594557350","Nablus","no",420);
 		Worker worker5=new Worker("noor","0593133421","dura","yes",520);
-		WorkerList.add(worker1);
-		WorkerList.add(worker2);
-		WorkerList.add(worker3);
-		WorkerList.add(worker4);
-		WorkerList.add(worker5);
+		workerList.add(worker1);
+		workerList.add(worker2);
+		workerList.add(worker3);
+		workerList.add(worker4);
+		workerList.add(worker5);
 		Scanner scanner = new Scanner(System.in);
 		Admin myadmin=new Admin();
 		boolean loggedIn = false;
@@ -101,9 +101,8 @@ public class Main {
 					try {
 						TimeUnit.SECONDS.sleep(1);
 					} catch (InterruptedException e) {
-
 						Thread.currentThread().interrupt();
-						e.printStackTrace();
+
 					}
 					SpringApplication.run(Main.class, argss);
 					break;
@@ -144,7 +143,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 
 		logger.info("This is all avilable Worker\n ");
-		for(Worker i:WorkerList) {
+		for(Worker i: workerList) {
 
 			if(i.isAvailability().equals("yes"))
 			{
@@ -169,7 +168,7 @@ public class Main {
 
 
 
-		for(Worker i :WorkerList)
+		for(Worker i : workerList)
 		{
 			if(i.getName().equals(find))
 			{

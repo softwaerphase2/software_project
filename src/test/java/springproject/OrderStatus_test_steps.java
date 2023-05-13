@@ -9,11 +9,9 @@ public class OrderStatus_test_steps {
 
 	@Given("there is an order that the customer Not explained it enough")
 	public void thereIsAnOrderThatTheCustomerNotExplainedItEnough() {
-
 		Customer C = new Customer();
 		C.setHasOrder("no");
-		assertEquals(false , C.getHasOrder());
-	    //throw new io.cucumber.java.PendingException();
+		assertEquals(false, Boolean.valueOf(C.getHasOrder()));
 	}
 
 	@Then("the order status is waiting")

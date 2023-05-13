@@ -2,7 +2,7 @@ package springproject;
 
 public class Order {
 
-	private String Status;
+	private String status;
 	private int discount;
 	private boolean isReady;
 	private String [] items;
@@ -12,13 +12,13 @@ public class Order {
 	
 	public void setOrderStatus(String s) {
 
-		this.Status = s;
+		this.status = s;
 		
 	}
 	
 	public String getOrderStatus() {
 		
-		return Status;
+		return status;
 		
 	}	
 	
